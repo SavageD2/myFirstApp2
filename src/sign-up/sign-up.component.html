@@ -1,1 +1,93 @@
-<p>sign-up works!</p>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <div>
+    <label for="first-name">Firstname: </label>
+    <input
+      type="text"
+      name="first-name"
+      placeholder="firstname"
+      [(ngModel)]="signUpForm.firstName"
+      #firstName="ngModel"
+      required
+      minlength="5"
+      maxlength="30"
+    />
+  </div>
+
+  <div *ngIf="firstName.errors">
+    <span *ngIf="formSubmitted && firstName.errors?.['required']"
+      >Le Prénom est requis</span
+    >
+    <span *ngIf="formSubmitted && firstName.errors?.['minlength']"
+      >Pas si vite !!! Il faut plus de 5 caractères</span
+    >
+    <span *ngIf="formSubmitted && firstName.errors?.['maxlength']"
+      >Moins de 30 caractères s'il vous plait !!!
+    </span>
+  </div>
+
+  <div>
+    <label for="last-name">Lastname: </label>
+    <input
+      type="text"
+      name="last-name"
+      placeholder="lastname"
+      [(ngModel)]="signUpForm.lastName"
+      #lastName="ngModel"
+      required
+      minlength="5"
+      maxlength="30"
+    />
+  </div>
+
+  <div *ngIf="firstName.errors">
+    <span *ngIf="formSubmitted && lastName.errors?.['required']"
+      >Le Nom est requis</span
+    >
+    <span *ngIf="formSubmitted && lastName.errors?.['minlength']"
+      >Moins de 5 caractères encore !? toujours pas possible</span
+    >
+    <span *ngIf="formSubmitted && lastName.errors?.['maxlength']"
+      >Trop long</span
+    >
+  </div>
+
+  <div>
+    <label for="email">Email: </label>
+    <input
+      type="text"
+      name="email"
+      placeholder="email"
+      [(ngModel)]="signUpForm.email"
+      #contact="ngModel"
+      required
+      email
+    />
+  </div>
+
+  <div *ngIf="contact.errors">
+    <span *ngIf="formSubmitted && contact.errors?.['required']"
+      >Email requis</span
+    >
+    <span *ngIf="formSubmitted && contact.errors?.['email']"
+      >Bien tenté, mais il faut un email valide</span
+    >
+  </div>
+
+  <div>
+    <label for="password">Password: </label>
+    <input
+      type="text"
+      name="password"
+      placeholder="*********"
+      [(ngModel)]="signUpForm.password"
+      #password="ngModel"
+      required
+      password
+    />
+  </div>
+  <div *ngIf="password.errors">
+    <span *ngIf="password.errors['required']">Mot de passe requis</span>
+    <span *ngIf="password.errors['password']">Pas assez secure</span>
+  </div>
+  <button type="submit">Submit</button>
+</form>
