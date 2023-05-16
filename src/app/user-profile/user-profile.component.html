@@ -1,0 +1,14 @@
+<div class="user">
+    <img [src]="user.photo">
+    <div><span>Name:</span>{{user.name}}</div>
+    <div><span>Firstname:</span>{{user.firstName}}</div>
+    <div><span>Quote:</span>{{user.quote}}</div>
+    <div>
+        <label for="quote"></label>
+        <input [(ngModel)]="user.quote" placeholder="You're not worthy as my opponent">
+    </div>
+    <button (click)="toggleAge()">{{button}}</button>
+    <div *ngIf="showAge">
+        <div><span>Age: </span>{{user.age}}</div>
+    </div>
+</div>
