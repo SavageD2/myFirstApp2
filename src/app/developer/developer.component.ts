@@ -9,7 +9,7 @@ import { Skill } from '../models/skill.model';
 })
 export class DeveloperComponent implements OnInit {
 
-  dev: Developer = new Developer('Savage','Vandal',2000,'male','immortal',[new Skill(
+  dev: Developer = new Developer('Vandal','Savage',2000,'male','immortal',[new Skill(
     'html',
     'css',
     'javascript'
