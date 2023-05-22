@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Onomatopoeia } from './models/onomatopoeia.model';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Savage';
 
+  onomatopoeiaList: string[] = [];
+
+  onReceiveOnomatopoeia(newWords: string):void {
+    this.onomatopoeiaList.push(newWords);
+    console.log("parent" , this.onomatopoeiaList);
+    console.log(newWords);
+    
+  }
 }

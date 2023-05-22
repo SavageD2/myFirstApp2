@@ -1,6 +1,6 @@
 <p>developer works!</p>
 <h2>Dev</h2>
-<div>
+<div class="dev">
     <strong>
         <p> {{dev.lastName}} </p>
         <p> {{dev.firstName}} </p>
@@ -10,6 +10,7 @@
     </strong>
 </div>
 <app-skill
+    class="skills"
     *ngFor="let skill of dev.skills"
     [skillToDisplay]="skill"
 ></app-skill>

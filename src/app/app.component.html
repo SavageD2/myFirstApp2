@@ -1,6 +1,16 @@
 <span>BIenvenue sur le site de {{ title }} !</span>
-<router-outlet></router-outlet>
 <app-menu></app-menu>
+<app-create-onomatopoeia 
+  (sendOnomatopoeiaToParent)="onReceiveOnomatopoeia($event)"></app-create-onomatopoeia>
+<ul>
+    <li *ngFor="let words of onomatopoeiaList">
+        {{words}}
+    </li>
+</ul>
+
+
+<router-outlet></router-outlet>
+
 <!-- 
 <div class="block_parent">
     <div class="block_1">
