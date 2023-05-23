@@ -13,6 +13,7 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { SkillComponent } from './skill/skill.component';
 import { CreateOnomatopoeiaComponent } from './create-onomatopoeia/create-onomatopoeia.component';
+import { CocktailsComponent } from './cocktails/cocktails.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { CreateOnomatopoeiaComponent } from './create-onomatopoeia/create-onomat
     DeveloperComponent,
     SkillComponent,
     CreateOnomatopoeiaComponent,
+    CocktailsComponent,
   ],
   imports: [
     BrowserModule,
