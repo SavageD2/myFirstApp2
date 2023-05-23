@@ -14,6 +14,7 @@ import { DeveloperComponent } from './developer/developer.component';
 import { SkillComponent } from './skill/skill.component';
 import { CreateOnomatopoeiaComponent } from './create-onomatopoeia/create-onomatopoeia.component';
 import { CocktailsComponent } from './cocktails/cocktails.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { CocktailsComponent } from './cocktails/cocktails.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

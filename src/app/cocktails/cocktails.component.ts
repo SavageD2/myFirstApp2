@@ -11,10 +11,12 @@ export class CocktailsComponent implements OnInit {
 
   public cocktails: Cocktail[]= [];
   
-  constructor(private cocktailsService: CocktailServiceService) { }
+  constructor(public cocktailsService: CocktailServiceService) { }
 
   ngOnInit(): void {
-    this.cocktails = this.cocktailsService.getCocktails();
+    this.cocktailsService.getCocktails().subscribe(cocktailsData => {
+      this.cocktails = cocktailsData;
+    });
   }
 
 }
